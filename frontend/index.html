@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Stocks Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      window.__errors = [];
+      window.addEventListener('error', (e) => {
+        console.error('GLOBAL ERROR:', e.message, e.filename, e.lineno);
+        window.__errors.push({ type: 'error', message: e.message, file: e.filename, line: e.lineno });
+        const banner = document.getElementById('debug-banner');
+        if (banner) {
+          banner.innerText = 'ERROR: ' + e.message;
+          banner.style.background = '#ff6b6b';
+        }
+      });
+      window.addEventListener('unhandledrejection', (e) => {
+        console.error('UNHANDLED REJECTION:', e.reason);
+        window.__errors.push({ type: 'rejection', reason: e.reason });
+        const banner = document.getElementById('debug-banner');
+        if (banner) {
+          banner.innerText = 'REJECTION: ' + JSON.stringify(e.reason);
+          banner.style.background = '#ff6b6b';
+        }
+      });
+      console.log('index.html: global error handlers attached');
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    <script type="module">
+      console.log('index.html: main module script starting');
+      import('/src/main.jsx').then(() => {
+        console.log('index.html: main.jsx loaded successfully');
+      }).catch(err => {
+        console.error('index.html: Failed to load main.jsx:', err);
+      });
+    </script>
+  </body>
+</html>

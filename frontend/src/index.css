@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.card { @apply bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-gray-200; }
+.card-header { @apply flex items-center justify-between mb-4; }
+.metric { @apply p-4 rounded-lg border flex flex-col gap-1 shadow-sm bg-gradient-to-br from-white to-gray-50; }

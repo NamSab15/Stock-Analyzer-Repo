@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "framework": "vite",
+  "env": {
+    "VITE_API_URL": "@vite_api_url",
+    "VITE_WS_URL": "@vite_ws_url"
+  },
+  "env_": {
+    "VITE_API_URL": {
+      "required": false,
+      "default": "https://your-backend-url.herokuapp.com/api"
+    },
+    "VITE_WS_URL": {
+      "required": false,
+      "default": "wss://your-backend-url.herokuapp.com"
+    }
+  },
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "https://your-backend-url.herokuapp.com/api/$1",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+    }
+  ]
+}
