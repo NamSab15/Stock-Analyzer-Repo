@@ -1,6 +1,6 @@
 # 📚 Documentation Index
 
-Your Indian Stocks Dashboard comes with comprehensive documentation. Here's what's available:
+Your ForecastX dashboard comes with comprehensive documentation. Here's what's available:
 
 ---
 

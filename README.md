@@ -1,6 +1,6 @@
-# Indian Stocks Sentiment Analyzer
+# ForecastX — AI Trading & Sentiment Insights
 
-This repository contains a full-stack app for monitoring Indian stocks with sentiment analysis, real-time updates, and charts.
+ForecastX is a full-stack app to monitor stocks with real-time data, sentiment analysis, AI-driven predictions, and intuitive charts.
 
 Contents
 - backend: Node/Express backend
