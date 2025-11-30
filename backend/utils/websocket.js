@@ -1,12 +1,15 @@
 // backend/utils/websocket.js
 const { Stock } = require('../models/Stock');
-const { calculateAggregateSentiment } = require('../services/sentimentService');
+// To avoid circular imports, require sentiment service functions lazily within functions where needed
 
 /**
  * Initialize WebSocket server and handle connections
  */
+let wssServer = null;
+
 function initializeWebSocket(wss) {
   console.log('🔌 WebSocket server initialized');
+  wssServer = wss;
   
   wss.on('connection', (ws) => {
     console.log('✅ New client connected');
@@ -106,6 +109,7 @@ async function handleSubscribe(ws, payload) {
   
   // Send immediate update for subscribed stock
   try {
+    const { calculateAggregateSentiment } = require('../services/sentimentService');
     const stock = await Stock.findOne({ symbol });
     const sentiment = await calculateAggregateSentiment(symbol, 24);
     
@@ -147,6 +151,7 @@ async function handleUpdateRequest(ws, payload) {
   const { symbol } = payload;
   
   try {
+    const { calculateAggregateSentiment } = require('../services/sentimentService');
     const stock = await Stock.findOne({ symbol });
     const sentiment = await calculateAggregateSentiment(symbol, 24);
     
@@ -174,6 +179,7 @@ async function broadcastStockUpdates(wss) {
   try {
     const stocks = await Stock.find().limit(15);
     
+    const { calculateAggregateSentiment } = require('../services/sentimentService');
     const updates = await Promise.all(
       stocks.map(async (stock) => ({
         stock,
@@ -231,4 +237,5 @@ module.exports = {
   initializeWebSocket,
   broadcastStockUpdates,
   broadcastSentimentAlert,
+  getClientCount: () => (wssServer && wssServer.clients ? wssServer.clients.size : 0),
 };

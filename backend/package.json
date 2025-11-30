@@ -1,7 +1,7 @@
 {
-  "name": "indian-stock-sentiment-backend",
+  "name": "stockx-backend",
   "version": "1.0.0",
-  "description": "Real-time Indian Stock Market Sentiment Analyzer Backend",
+  "description": "StockX — Real-time stock market sentiment & AI insights backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

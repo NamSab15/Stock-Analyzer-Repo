@@ -8,6 +8,7 @@ const WebSocket = require('ws');
 const stockRoutes = require('./routes/stocks');
 const sentimentRoutes = require('./routes/sentiment');
 const authRoutes = require('./routes/auth');
+const debugRoutes = require('./routes/debug');
 const alertRoutes = require('./routes/alerts');
 const { initializeWebSocket } = require('./utils/websocket');
 const { startSentimentAnalysis } = require('./services/sentimentService');
@@ -54,6 +55,7 @@ app.use('/api/stocks', stockRoutes);
 app.use('/api/sentiment', sentimentRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/alerts', alertRoutes);
+app.use('/api/debug', debugRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

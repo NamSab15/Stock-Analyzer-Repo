@@ -1,12 +1,11 @@
 // backend/services/sentimentService.js - ENSEMBLE + MULTI-SOURCE
 const { Sentiment: SentimentModel, SentimentAggregate } = require('../models/Stock');
 const { broadcastSentimentAlert } = require('../utils/websocket');
-const { evaluateAlertsForSymbol } = require('./alertService');
 const { fetchNewsForStock } = require('./newsService');
 const { getAllStocksList } = require('./stockService');
 const { fetchExtendedSentimentSources } = require('./sentimentSources');
 const { analyzeTextWithEnsemble } = require('./sentimentAnalyzers');
-const { evaluateAlertsForSymbol } = require('./alertService');
+// evaluateAlertsForSymbol imported from alertService above
 
 const SOURCE_TYPE_DEFAULTS = {
   news: { provider: 'news', sourceType: 'news' },

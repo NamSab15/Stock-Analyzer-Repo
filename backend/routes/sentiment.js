@@ -72,7 +72,7 @@ router.get('/:symbol/history', async (req, res) => {
 router.get('/:symbol/news', async (req, res) => {
   try {
     let { symbol } = req.params;
-    const { limit = 20, sourceType, minConfidence } = req.query;
+    const { limit = 20, skip = 0, sourceType, minConfidence } = req.query;
     
     if (!symbol.includes('.')) {
       symbol += '.NS';
@@ -92,9 +92,10 @@ router.get('/:symbol/news', async (req, res) => {
 
     let news = await Sentiment.find(query)
       .sort({ timestamp: -1 })
+      .skip(parseInt(skip))
       .limit(parseInt(limit));
 
-    if (news.length === 0) {
+    if (news.length === 0 && parseInt(skip) === 0) {
       try {
         await processNewsSentiment(symbol);
         news = await Sentiment.find(query)

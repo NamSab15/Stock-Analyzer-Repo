@@ -324,7 +324,7 @@ export default function App() {
                   <span className="text-brand-700 font-bold text-xl">IS</span>
                 </div>
                 <h2 className="text-xl font-semibold mb-2">Select a stock</h2>
-                <p className="text-sm text-gray-600 dark:text-slate-300 max-w-md">Use the watchlist to explore real-time prices, AI predictions, sentiment analytics and news coverage for Indian stocks.</p>
+                <p className="text-sm text-gray-600 dark:text-slate-300 max-w-md">Use the watchlist to explore real-time prices, AI predictions, sentiment analytics and news coverage for StockX.</p>
               </div>
             )}
             {selected && (
@@ -364,7 +364,7 @@ export default function App() {
             )}
           </div>
         </div>
-        <footer className="pt-4 pb-10 text-xs text-gray-500 dark:text-slate-400 text-center">Data is for educational purposes. © {new Date().getFullYear()} Indian Stocks Dashboard.</footer>
+        <footer className="pt-4 pb-10 text-xs text-gray-500 dark:text-slate-400 text-center">Data is for educational purposes. © {new Date().getFullYear()} StockX.</footer>
       </main>
     </div>
   );

@@ -1,6 +1,6 @@
-# QuantSight
+# stockX — AI Trading & Sentiment Insights
 
-QuantSight is a full-stack analytics platform for Indian financial markets, offering real-time stock visualization, sentiment evaluation, predictive modeling, and configurable alerting. It is designed with a modular architecture enabling scalable data processing and future machine-learning extensions.
+stockX is a full-stack analytics platform for Indian financial markets, offering real-time stock visualization, sentiment evaluation, AI-driven predictive modeling, and configurable alerting. Designed with a modular and scalable architecture, ForecastX enables advanced analytical workflows and future machine-learning extensions.
 
 ## Key Features
 
