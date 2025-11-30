@@ -1,7 +1,7 @@
 {
-  "name": "forecastx-backend",
+  "name": "stockx-backend",
   "version": "1.0.0",
-  "description": "ForecastX — Real-time stock market sentiment & AI insights backend",
+  "description": "StockX — Real-time stock market sentiment & AI insights backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

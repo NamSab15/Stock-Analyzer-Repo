@@ -1,6 +1,6 @@
-# ForecastX — AI Trading & Sentiment Insights
+# StockX — AI Trading & Sentiment Insights
 
-ForecastX is a full-stack app to monitor stocks with real-time data, sentiment analysis, AI-driven predictions, and intuitive charts.
+StockX is a full-stack app to monitor stocks with real-time data, sentiment analysis, AI-driven predictions, and intuitive charts.
 
 Contents
 - backend: Node/Express backend

@@ -18,7 +18,7 @@ export default function Header({ wsConnected, onRefresh, dark, toggleDark }) {
         <div className="flex items-center gap-3">
           <Activity className="w-7 h-7 text-brand-600" aria-hidden="true" />
           <div>
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white" aria-label="Indian Stock Sentiment Dashboard">Indian Stock Sentiment</h1>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white" aria-label="StockX Dashboard">StockX</h1>
             <p className="text-xs text-gray-600 dark:text-slate-400">Real-time market data • AI insights</p>
           </div>
         </div>
